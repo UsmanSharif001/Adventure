@@ -4,6 +4,12 @@ public class Room {
     private String name;
     private String enviorment;
     private String currentRoom;
+    private Room east;
+
+    public void setEast(Room east){
+        this.east=east;
+    }
+
 
 
     public String getCurrentRoom() {

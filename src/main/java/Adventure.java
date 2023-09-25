@@ -1,13 +1,11 @@
 public class Adventure {
+
     private Room currentRoom;
 
     public Room getCurrenRoom(){
         return currentRoom;
     }
 
-    //public void setCurrentRoom(Room currentRoom) {
-        //this.currentRoom = currentRoom;
-    //}
 
     public void buildMap(){
         Room room1 = new Room("room 1","1");

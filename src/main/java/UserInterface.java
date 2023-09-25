@@ -13,10 +13,7 @@ public class UserInterface {
         adventure.buildMap();
 
         System.out.println("Welome to THE adventure game! Let your journey commence!");
-
         Scanner scanner = new Scanner(System.in);
-        //String cmd = scanner.nextLine();
-
         String cmd;
 
         while(true) {
