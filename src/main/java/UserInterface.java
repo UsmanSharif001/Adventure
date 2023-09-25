@@ -32,9 +32,6 @@ public class UserInterface {
                 case "exit" -> exit();
                 default -> System.out.println("Error");
 
-
-
-
             }
         }
 

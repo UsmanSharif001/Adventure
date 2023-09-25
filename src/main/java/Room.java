@@ -38,12 +38,5 @@ public class Room {
         this.enviorment = enviorment;
     }
 
-    @Override
-    public String toString() {
-        return "Room{" +
-                "name='" + name + '\'' +
-                ", enviorment='" + enviorment + '\'' +
-                ", currentRoom='" + currentRoom + '\'' +
-                '}';
-    }
+
 }
