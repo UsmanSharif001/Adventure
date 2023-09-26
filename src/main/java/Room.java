@@ -8,6 +8,12 @@ public class Room {
     private Room north;
     private Room south;
 
+    public Room(String name,String enviorment){
+        this.name=name;
+        this.enviorment=enviorment;
+    }
+
+    //set metoder
     public void setEast(Room east){
         this.east=east;
     }
@@ -23,6 +29,7 @@ public class Room {
         this.south=south;
     }
 
+    //get metoder
     public Room getEast(){
         return east;
     }
@@ -39,28 +46,8 @@ public class Room {
         return north;
     }
 
-
-    //konstruktør
-    public Room(String name,String enviorment){
-        this.name=name;
-        this.enviorment=enviorment;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
     public String getEnviorment() {
         return enviorment;
     }
-
-    public void setEnviorment(String enviorment) {
-        this.enviorment = enviorment;
-    }
-
 
 }
