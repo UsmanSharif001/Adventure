@@ -26,9 +26,6 @@ public class Adventure {
         //peg på room1
         currentRoom = room1;
 
-
-
-
 //if(room1.equals("east")) {
 //currentRoom = room2;
 //} else {
