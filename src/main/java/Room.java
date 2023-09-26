@@ -39,13 +39,9 @@ public class Room {
         return north;
     }
 
-    public String getCurrentRoom() {
-        return currentRoom;
-    }
 
-    public void setCurrentRoom(String currentRoom) {
-        this.currentRoom = currentRoom;
-    }
+
+
 
 
 
