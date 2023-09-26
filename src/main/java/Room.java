@@ -3,14 +3,41 @@ public class Room {
     //attributes
     private String name;
     private String enviorment;
-    private String currentRoom;
     private Room east;
+    private Room west;
+    private Room north;
+    private Room south;
 
     public void setEast(Room east){
         this.east=east;
     }
 
+    public void setWest(Room west){
+        this.west=west;
+    }
+    public void setNorth(Room north) {
+        this.north=north;
+    }
 
+    public void setSouth(Room south){
+        this.south=south;
+    }
+
+    public Room getEast(){
+        return east;
+    }
+
+    public Room getWest(){
+        return west;
+    }
+
+    public Room getSouth(){
+        return south;
+    }
+
+    public Room getNorth(){
+        return north;
+    }
 
     public String getCurrentRoom() {
         return currentRoom;

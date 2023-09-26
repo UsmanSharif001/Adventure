@@ -24,7 +24,7 @@ public class UserInterface {
                 case "west", "w", "go west" -> System.out.println("Going west");
                 case "south", "s", "go south" -> System.out.println("Going south");
 
-                case "look" -> System.out.print(adventure.getCurrenRoom() + " You are here");
+                case "look" -> System.out.print(adventure.getCurrenRoom().getEnviorment() + " You are here");
                 case "help" -> System.out.println("Try google: www.google.com/help");
                 case "exit" -> exit();
                 default -> System.out.println("Error");
