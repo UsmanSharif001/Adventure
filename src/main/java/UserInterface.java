@@ -19,10 +19,10 @@ public class UserInterface {
         while(true) {
              cmd = scanner.nextLine();
             switch (cmd) {
-                case "north", "n", "go north" -> System.out.println("Going north");
-                case "east", "e", "go east" -> System.out.println("Going east");
-                case "west", "w", "go west" -> System.out.println("Going west");
-                case "south", "s", "go south" -> System.out.println("Going south");
+                case "north", "n", "go north" -> adventure.moveRoom("north");
+                case "east", "e", "go east" -> adventure.moveRoom("east");
+                case "west", "w", "go west" -> adventure.moveRoom("west");
+                case "south", "s", "go south" -> adventure.moveRoom("south");
 
                 case "look" -> System.out.print(adventure.getCurrenRoom().getEnviorment() + " You are here");
                 case "help" -> System.out.println("Try google: www.google.com/help");

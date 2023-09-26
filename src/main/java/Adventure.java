@@ -48,8 +48,8 @@ public class Adventure {
         currentRoom = room1;
     }
 
-    public void nextRoomEast(String move) {
-        if (move.equals("east")) {
+    /*public void nextRoomEast(String move) {
+      //  if (move.equals("east")) {
             currentRoom = currentRoom.getEast();
         }
     }
@@ -70,6 +70,30 @@ public class Adventure {
         if (move.equals("south")) {
             currentRoom = currentRoom.getSouth();
         }
+    } */
+
+    public void moveRoom(String move) {
+        Room requestedRoom = null;
+
+        switch (move) {
+            case "e", "east", "go east" -> {
+                requestedRoom = currentRoom.getEast();
+            }
+
+            case "w", "west", "go west" -> {
+                requestedRoom = currentRoom.getWest();
+            }
+            case "n", "north", "go north" -> {
+                requestedRoom = currentRoom.getNorth();
+            }
+            case "s", "south", "go south" -> {
+                requestedRoom = currentRoom.getSouth();
+            }
+        }
+        if (requestedRoom != null) {
+            currentRoom = requestedRoom;
+        } else System.out.println("Not a room");
+
     }
 
 }
