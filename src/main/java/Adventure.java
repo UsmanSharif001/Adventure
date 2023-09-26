@@ -8,7 +8,7 @@ public class Adventure {
 
 
     public void buildMap() {
-        Room room1 = new Room("room 1", "You enter a bland room. The old stone floor looks cracked and ready to break at any given moment. At the wall to the left from you, you see a picture. It's a picture of your familiytree but you can't recall ");
+        Room room1 = new Room("room 1", "You enter a bland room. The old stone floor looks cracked and ready to break at any given moment.\n At the wall to the left from you, you see a picture. It's a picture of your familiytree but you can't recall");
         Room room2 = new Room("room 2", "2");
         Room room3 = new Room("room 3", "3");
         Room room4 = new Room("room 4", "4");

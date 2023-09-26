@@ -40,11 +40,6 @@ public class Room {
     }
 
 
-
-
-
-
-
     //konstruktør
     public Room(String name,String enviorment){
         this.name=name;
