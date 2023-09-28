@@ -8,6 +8,9 @@ public class Room {
     private Room north;
     private Room south;
 
+    public Room (){
+
+    }
     public Room(String name,String enviorment){
         this.name=name;
         this.enviorment=enviorment;
@@ -46,7 +49,7 @@ public class Room {
         return north;
     }
 
-    public String getEnviorment() {
+    public String look() {
         return enviorment;
     }
 
