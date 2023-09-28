@@ -1,8 +1,14 @@
 public class Map {
 
     private Room startroom;
+    public Map(){
+        initializeStartRoom();
+    }
 
-
+public Room initializeStartRoom() {
+    startroom = new Room("Starting room", "Your journey begins here");
+    return null;
+}
 
 
     public void buildMap () {

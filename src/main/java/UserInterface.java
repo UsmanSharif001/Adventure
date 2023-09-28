@@ -1,7 +1,16 @@
 import java.util.Scanner;
 import java.util.ArrayList;
 
+import static java.lang.System.exit;
+
 public class UserInterface {
+    Adventure adventure;
+    Scanner scanner;
+
+    public UserInterface(Adventure ad){
+        this.adventure = ad;
+        scanner = new Scanner(System.in);
+    }
 
     public static void exit() {
         System.out.println("Exiting the game");
@@ -15,13 +24,13 @@ public class UserInterface {
         System.out.println("To move around the Castle use one of the following commands: ");
         System.out.println("go north, go south, go east, go west ");
 
+
         adventure.buildMap();
 
-
-
         while (true) {
+
             String cmd;
-            cmd = scanner.nextLine();
+            cmd = scanner.nextLine().trim();
             switch (cmd) {
                 case "north", "n", "go north" -> adventure.moveRoom("north");
                 case "east", "e", "go east" -> adventure.moveRoom("east");

@@ -5,6 +5,7 @@ public class Adventure {
 
         public  Adventure(){
                 this.map = new Map();
+                this.map.initializeStartRoom();
                 this.player = new Player(map.getStartroom());
         }
 
@@ -29,5 +30,5 @@ public class Adventure {
 
 
 
-    }
+
 

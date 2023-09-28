@@ -6,14 +6,16 @@ public class Player {
 
 
     public Player(Room room){
-        this.currentRoom = room
+        this.currentRoom = room;
     }
 
     public Room getCurrenRoom() {
         return currentRoom;
     }
-    /*public void moveRoom (String move){
+    public void moveRoom (String move){
+        System.out.println("Command entered: " + move);
         Room requestedRoom = null;
+        move = move.toLowerCase();
 
 
         switch (move) {
@@ -35,17 +37,17 @@ public class Player {
             currentRoom = requestedRoom;
         } else System.out.println("Not a room");
 
-    }*/
-
-    public boolean moveRoom (char move) {
-        Room requestedRoom = null;
-        boolean succes = true;
-
-        if (move == 'e') {
-            requestedRoom = currentRoom.getEast();
-            succes = goEast();
-        }
     }
+
+//    public boolean moveRoom (char move) {
+//        Room requestedRoom = null;
+//        boolean succes = true;
+//
+//        if (move == 'e') {
+//            requestedRoom = currentRoom.getEast();
+//            succes = goEast();
+//        } return succes;
+//    }
 
     public String look(){
         return currentRoom.look();
