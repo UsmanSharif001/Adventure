@@ -1,15 +1,6 @@
 public class Map {
 
     private Room startroom;
-    public Map(){
-        initializeStartRoom();
-    }
-
-public Room initializeStartRoom() {
-    startroom = new Room("Starting room", "Your journey begins here");
-    return null;
-}
-
 
     public void buildMap () {
         Room room1 = new Room("The bland room", "You enter a bland room. The old stone floor looks rigid and ready to break at any given moment.\n At the wall to the left you see a fainting picture of whom you assume to be the lord of this castle.\n She stands tall and proud almost as if she would expect nothing but failiure from her subjects... or you?");
@@ -49,9 +40,10 @@ public Room initializeStartRoom() {
         room9.setWest(room8);
         room9.setNorth(room6);
 
+
         startroom = room1;
 
-    }
+        }
 
     public Room getStartroom(){
         return startroom;
