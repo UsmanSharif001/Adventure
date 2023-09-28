@@ -50,4 +50,8 @@ public class Room {
         return enviorment;
     }
 
+    public String getName(){
+        return name;
+    }
+
 }
