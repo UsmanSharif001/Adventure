@@ -9,6 +9,18 @@ public class Room {
     private Room west;
     private Room north;
     private Room south;
+    private ArrayList<Item> itemList =new ArrayList<>();
+
+
+    public void addItem(String itemName, String itemDescription){
+        //Item item = new Item(itemName, itemDescription); Undgår her at bruge item navn.
+        itemList.add(new Item(itemName, itemDescription));
+
+    }
+    public void addItem(Item item){
+        itemList.add(item);
+    }
+
 
     public Room(String name,String enviorment){
         this.name=name;
@@ -51,6 +63,34 @@ public class Room {
     public String getEnviorment() {
         return enviorment;
     }
+
+    public String getName(){
+        return name;
+    }
+
+    public ArrayList<Item> getRoomItems(){
+        return itemList;
+    }
+
+    public void removeRoomItem(Item item){
+        itemList.remove(item);
+    }
+
+    public boolean takeItem(String takeItemName) {
+        if (takeItemName.contains(takeItemName))
+            return true;
+        else
+            return false;
+
+    }
+    public boolean searchForItems(String searchForItems) {
+            if (searchForItems.contains(searchForItems))
+                return true;
+            else
+                return false;
+
+    }
+
 
 
 }
