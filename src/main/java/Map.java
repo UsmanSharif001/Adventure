@@ -15,6 +15,7 @@ public class Map {
         //Room 1
         room1.setEast(room2);
         room1.setSouth(room4);
+        room1.addItem("Lamp", "Shines bright like a diamond");
         //Room 2
         room2.setWest(room1);
         room2.setEast(room3);
@@ -26,12 +27,14 @@ public class Map {
         room4.setSouth(room7);
         //Room5
         room5.setSouth(room8);
+        room5.addItem("Treasure", "Lots of gold coins");
         //Room 6
         room6.setNorth(room3);
         room6.setSouth(room9);
         //Room 7
         room7.setNorth(room4);
         room7.setEast(room8);
+        room7.addItem("Sword", "The sword of a thousand truths");
         //Room 8
         room8.setWest(room7);
         room8.setNorth(room5);
@@ -48,11 +51,6 @@ public class Map {
     public Room getStartroom(){
         return startroom;
     }
-
-    public void setStartroom(Room startroom){
-        this.startroom=startroom;
-    }
-
 
 
 }

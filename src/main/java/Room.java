@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Room {
 
     //attributes
@@ -50,8 +52,5 @@ public class Room {
         return enviorment;
     }
 
-    public String getName(){
-        return name;
-    }
 
 }
