@@ -22,26 +22,26 @@ public class Player {
                 Room requestedRoom = currentRoom.getEast();
                 if (requestedRoom != null) {
                     currentRoom = requestedRoom;
-                }
+                } else System.out.println("No room in  that direction");
             }
 
             case "w", "west", "go west" -> {
                 Room requestedRoom = currentRoom.getWest();
                 if (requestedRoom != null) {
                     currentRoom = requestedRoom;
-                }
+                } else System.out.println("No room in that direction");
             }
             case "n", "north", "go north" -> {
                 Room requestedRoom = currentRoom.getNorth();
                 if (requestedRoom != null) {
                     currentRoom = requestedRoom;
-                }
+                } else System.out.println("No room in that direction");
             }
             case "s", "south", "go south" -> {
                 Room requestedRoom = currentRoom.getSouth();
                 if (requestedRoom != null) {
                     currentRoom = requestedRoom;
-                }
+                } else System.out.println("No room in that direction");
             }
         }
     }
