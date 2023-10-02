@@ -35,7 +35,7 @@ public class UserInterface {
                 case "south", "s", "go south" -> adventure.moveRoom(cmd);
                 case "look" -> System.out.print(adventure.look());
                 case "help" ->
-                        System.out.println("Here is a list of available commands: \n" + " look - This will give you a description of the current room you are in\n " + " exit - This command will exit the game");
+                        System.out.println("Here's a list of available commands: \n" + " look - This will give you a description of the current room you are in\n " + " exit - This command will exit the game");
                 case "exit" -> exit();
                 default -> System.out.println("Not a command, try another");
 

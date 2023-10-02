@@ -48,13 +48,15 @@ public class Room {
     public Room getNorth(){
         return north;
     }
-
     public String look() {
         return enviorment;
     }
 
     public String getName(){
         return name;
+    }
+    public String getEnviorment(){
+        return enviorment;
     }
 
 }
