@@ -1,3 +1,5 @@
+import java.util.ArrayList;
+
 public class Adventure {
 
         private Map map;
@@ -6,29 +8,22 @@ public class Adventure {
 
         public Adventure(){
                 this.map = new Map();
-                map.buildMap(); //TOdo Den her bliver kaldt og ikke den i vores userinterface
+                map.buildMap();
                 Room initialRoom = map.getStartroom();
                 this.player = new Player(initialRoom);
-
         }
-
-        public void buildMap(){
-                map.buildMap();
-}
-
-
-        /*public void moveToNextRoom(String move){
-                player.moveToNextRoom(move);
-        } */
-
 
 
         public String look(){
                 return player.look();
         }
 
-        public void moveRoom(String move){
-                player.moveRoom(move);
+        public boolean moveRoom(char move){
+             return player.moveRoom(move);
+        }
+
+        public Player getPlayer(){
+                return player;
         }
 
 
