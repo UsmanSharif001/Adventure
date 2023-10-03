@@ -1,9 +1,4 @@
-import org.jetbrains.annotations.NotNull;
-
-import java.security.PublicKey;
 import java.util.ArrayList;
-
-import static java.lang.System.exit;
 
 public class Player {
 
@@ -137,23 +132,4 @@ public class Player {
         }
         return string;
     }
-
-
-//    public ArrayList<Item> itemList() {
-//        return itemList();
-//    }
-//
-//
-//    public ArrayList<Item> removeItem (String itemName) {
-//
-//            itemList().removeIf(item->itemName.equals(itemName));
-//            return null;
-//    }
-//
-//    public boolean takeItem2(String itemName) {
-//        return currentRoom.takeItem(itemName);
-//
-//    }
-
-
 }

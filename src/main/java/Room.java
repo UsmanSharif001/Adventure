@@ -76,26 +76,4 @@ public class Room {
     public ArrayList<Item> getRoomItems(){
         return itemList;
     }
-
-    public void removeRoomItem(Item item){
-        itemList.remove(item);
-    }
-
-    public boolean takeItem(String takeItemName) {
-        if (takeItemName.contains(takeItemName))
-            return true;
-        else
-            return false;
-
-    }
-    public boolean searchForItems(String searchForItems) {
-            if (searchForItems.contains(searchForItems))
-                return true;
-            else
-                return false;
-
-    }
-
-
-
 }
