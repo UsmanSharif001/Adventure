@@ -17,7 +17,7 @@ public class Room {
         this.enviorment=enviorment;
     }
 
-    public void addItem(String itemName, String itemDescription){
+    public void addItem(String itemName, String itemDescription, int health){
         //Item item = new Item(itemName, itemDescription); Undgår her at bruge item navn.
         itemList.add(new Item(itemName, itemDescription));
 

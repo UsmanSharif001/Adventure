@@ -16,6 +16,7 @@ public class Map {
         room1.setEast(room2);
         room1.setSouth(room4);
         room1.addItem("Lamp", "Shines bright like a diamond");
+        room1.addItem("Apple", "A fresh apple", 10);
         //Room 2
         room2.setWest(room1);
         room2.setEast(room3);
@@ -33,6 +34,7 @@ public class Map {
         //Room 6
         room6.setNorth(room3);
         room6.setSouth(room9);
+        room6.addItem("Mysterious ooze", "Alineating looking food", -25);
         //Room 7
         room7.setNorth(room4);
         room7.setEast(room8);

@@ -27,11 +27,9 @@ public class Player {
         } else if (direction == 'e') {
             requestRoom = currentRoom.getEast();
             succes = goEast();
-
         } else if (direction == 'w') {
             requestRoom = currentRoom.getWest();
             succes = goWest();
-
         }
         if (succes && requestRoom != null) {
             currentRoom = requestRoom;
@@ -89,7 +87,7 @@ public class Player {
             String string = currentRoom.getName() + "\n" + currentRoom.getEnviorment();
             if (!curentRoom.getRoomItems().isEmpty()) {
                 for (Item item : currentRoom.getRoomItems()) {
-                    string += "\nThere is a " + item.getItemName() + " that " + item.getItemDescribion();
+                    string += "\nThere is a " + item.getItemName() + " that " + item.getItemDescription();
                 }
             }
             return string;
@@ -132,4 +130,37 @@ public class Player {
         }
         return string;
     }
+
+    public ReturnMessage eat(String itemName) {
+        for (Item item : inventory) {
+            if (item.getItemName().toLowerCase().contains(itemName.toLowerCase())) {
+                if (item instanceof Food) {
+                    inventory.remove(item);
+                    adjustHealth(((Food) item).getHealth());
+                    return ReturnMessage.EAT;
+
+                }
+                return ReturnMessage.CANTBEEATEN;
+            }
+        }
+        for (Item item : currentRoom.getRoomItems()) {
+            if (item.getItemName().toLowerCase().contains(itemName.toLowerCase())) {
+                if (item instanceof Food) {
+                    currentRoom.getRoomItems().remove(item);
+                    adjustHealth(((Food) item).getHealth());
+                    return ReturnMessage.EAT;
+
+                }
+                return ReturnMessage.CANTBEEATEN;
+            }
+        }
+        return ReturnMessage.CANTBEFOUND;
+
+    }
+
+    public void adjustHealth(int amount){
+        health += amount;
+
+    }
 }
+

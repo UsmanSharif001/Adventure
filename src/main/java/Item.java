@@ -1,27 +1,27 @@
 public class Item {
 
 private String itemName;
-private String itemDescribion;
+private String itemDescription;
 
 
-public Item (String itemName, String itemDescribion){
+public Item (String itemName, String itemDescription){
     this.itemName = itemName;
-    this.itemDescribion = itemDescribion;
+    this.itemDescription = itemDescription;
 }
 
 public String getItemName(){
     return itemName;
 }
 
-public String getItemDescribion(){
-    return itemDescribion;
+public String getItemDescription(){
+    return itemDescription;
 }
 
     @Override
     public String toString() {
         return "Item{" +
                 "itemName='" + itemName + '\'' +
-                ", itemDescribion='" + itemDescribion + '\'' +
+                ", itemDescribion='" + itemDescription + '\'' +
                 '}';
     }
 }
