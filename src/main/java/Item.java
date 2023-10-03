@@ -2,8 +2,7 @@ public class Item {
 
 private String itemName;
 private String itemDescribion;
-private String takeItem;
-private String dropItem;
+
 
 public Item (String itemName, String itemDescribion){
     this.itemName = itemName;
@@ -16,14 +15,6 @@ public String getItemName(){
 
 public String getItemDescribion(){
     return itemDescribion;
-}
-
-public String getTakeItem(){
-    return takeItem;
-}
-
-public String getDropItem(){
-    return dropItem;
 }
 
     @Override

@@ -27,7 +27,9 @@ public class Adventure {
                 return player.dropItem(itemName);
         }
 
-
+        public String showInventory(){
+                return player.showInventory();
+        }
 }
 
 

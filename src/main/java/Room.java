@@ -12,22 +12,15 @@ public class Room {
     private ArrayList<Item> itemList =new ArrayList<>();
 
 
+    public Room(String name,String enviorment){
+        this.name=name;
+        this.enviorment=enviorment;
+    }
+
     public void addItem(String itemName, String itemDescription){
         //Item item = new Item(itemName, itemDescription); Undgår her at bruge item navn.
         itemList.add(new Item(itemName, itemDescription));
 
-    }
-    public void addItem(Item item){
-        itemList.add(item);
-    }
-
-
-    public Room (){
-
-    }
-    public Room(String name,String enviorment){
-        this.name=name;
-        this.enviorment=enviorment;
     }
 
     //set metoder
@@ -61,9 +54,6 @@ public class Room {
 
     public Room getNorth(){
         return north;
-    }
-    public String look() {
-        return enviorment;
     }
 
     public String getName(){
