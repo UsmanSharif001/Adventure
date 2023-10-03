@@ -19,8 +19,13 @@ public class Room {
 
     public void addItem(String itemName, String itemDescription, int health){
         //Item item = new Item(itemName, itemDescription); Undgår her at bruge item navn.
-        itemList.add(new Item(itemName, itemDescription));
+        itemList.add(new Food(itemName,itemDescription,health));
 
+    }
+
+    public void addItem(String itemName, String itemDescription){
+        //Item item = new Item(itemName, itemDescription); Undgår her at bruge item navn.
+        itemList.add(new Item(itemName, itemDescription));
     }
 
     //set metoder

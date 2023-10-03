@@ -4,15 +4,21 @@ public class Player {
 
     private Room currentRoom;
     private ArrayList<Item> inventory;
+    private int health;
 
-    public Player(Room startRoom) {
+    public Player(Room startRoom, int health) {
         this.currentRoom = startRoom;
         inventory = new ArrayList<>();
+        this.health = health;
     }
 
 
     public Room getCurrenRoom() {
         return currentRoom;
+    }
+
+    public int getHealth() {
+        return health;
     }
 
     public boolean moveRoom(char direction) {

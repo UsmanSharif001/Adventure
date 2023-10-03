@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Adventure {
 
         private Map map;
@@ -8,7 +6,7 @@ public class Adventure {
         public Adventure(){
                 map = new Map();
                 map.buildMap();
-               player = new Player(map.getStartroom());
+               player = new Player(map.getStartroom(),50);
         }
 
         public String look(){
@@ -30,9 +28,13 @@ public class Adventure {
         public String showInventory(){
                 return player.showInventory();
         }
+
+        public int showHealth(){
+                return player.getHealth();
+        }
+
+        public ReturnMessage eat(String itemName){
+                return player.eat(itemName);
+        }
 }
-
-
-
-
 

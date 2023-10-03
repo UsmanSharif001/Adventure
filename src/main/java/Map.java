@@ -24,6 +24,7 @@ public class Map {
         //Room 3
         room3.setWest(room2);
         room3.setSouth(room6);
+        room3.addItem("Ice cream", "my god this is awesome", 20);
         //Room 4
         room4.setNorth(room1);
         room4.setSouth(room7);
