@@ -7,7 +7,12 @@ public abstract class Weapon extends Item {
         super(itemName,itemDescription);
         this.dmg= dmg;
     }
+    public int getDmg(){
+        return dmg;
+    }
 
-    public abstract int remainingAmmo(int usedAmmunition);
 
+
+    public abstract int attack();
+    public abstract boolean isLoaded();
 }

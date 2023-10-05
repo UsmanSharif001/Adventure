@@ -39,5 +39,9 @@ public class Adventure {
         public ReturnMessage equip(String itemName){
                 return player.equip(itemName);
         }
+
+        public ReturnMessageAttack attack(){
+                return player.attack();
+        }
 }
 

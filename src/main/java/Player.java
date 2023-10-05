@@ -147,6 +147,9 @@ public class Player {
             for (Item item : inventory) {
                 string += " \n" + item;
             }
+            if (currentWeapon != null){
+                string += "\nYou have the following weapon equipped " + currentWeapon;
+            }
         } else {
             string = "Inventory is empty";
         }
@@ -194,6 +197,16 @@ public class Player {
         return ReturnMessage.CANT_BE_USED;
     }
 
+    public ReturnMessageAttack attack(){
+        if (currentWeapon == null){
+            return ReturnMessageAttack.NO_WEAPON_EQUIPPED;
+        }
+        if (!currentWeapon.isLoaded()){
+            return ReturnMessageAttack.OUT_OF_AMMO;
+        }
+        currentWeapon.attack();
+        return ReturnMessageAttack.ATTACK;
+    }
 
     public void adjustHealth(int amount) {
         health += amount;

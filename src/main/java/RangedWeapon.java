@@ -8,9 +8,9 @@ public class RangedWeapon extends Weapon {
     }
 
     @Override
-    public int remainingAmmo(int usedAmmunition) {
-        usedAmmunition = -1;
-        return ammunition += usedAmmunition;
+    public int attack(){
+        ammunition -=1;
+        return getDmg();
 
     }
 }
