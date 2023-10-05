@@ -133,8 +133,10 @@ public class Player {
 
     public Item showInventory1(String itemName) {
         for (Item item : inventory) {
-            if (item.getItemName().equals(itemName)) ;
-            return item;
+            if (item.getItemName().toLowerCase().equals(itemName.toLowerCase())) {
+                return item;
+            }
+
         }
         return null;
     }
@@ -179,18 +181,17 @@ public class Player {
 
     public ReturnMessage equip(String itemName) {
         Item equippedWeapon = showInventory1(itemName);
-        for (Item item : inventory) {
-            if (equippedWeapon == null) {
-                return ReturnMessage.CANT_BE_USED;
-            }
-            if (item instanceof Weapon) {
-                currentWeapon = (Weapon) showInventory1(itemName);
-                inventory.remove(equippedWeapon);
-                return ReturnMessage.USE;
-            }
+        if (equippedWeapon == null) {
+            return ReturnMessage.CANT_BE_FOUND;
         }
 
-        return ReturnMessage.CANT_BE_FOUND;
+        if (equippedWeapon instanceof Weapon) {
+            currentWeapon = (Weapon) equippedWeapon;
+            //inventory.remove(equippedWeapon);
+            return ReturnMessage.USE;
+        }
+
+        return ReturnMessage.CANT_BE_USED;
     }
 
 

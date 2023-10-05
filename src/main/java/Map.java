@@ -18,7 +18,7 @@ public class Map {
         room1.addItem(new Item("Lamp", "Shines bright like a diamond"));
         room1.addItem(new Food("Apple", "A fresh apple", 10));
         room1.addItem(new RangedWeapon("Gun", "Rusty old piece - might backfire", 2,2));
-        room1.addItem(new MeleeWeapon("The Sword of a THOUSAND TRUTHS", "MY GOD WHAT A SWORD", 5));
+        room1.addItem(new MeleeWeapon("Sword", "The Sword of a THOUSAND TRUTHS", 5));
         //Room 2
         room2.setWest(room1);
         room2.setEast(room3);
