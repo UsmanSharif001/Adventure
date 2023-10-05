@@ -1,3 +1,4 @@
+import java.security.PublicKey;
 import java.util.ArrayList;
 
 public class Player {
@@ -5,6 +6,7 @@ public class Player {
     private Room currentRoom;
     private ArrayList<Item> inventory;
     private int health;
+    private Weapon currentWeapon;
 
     public Player(Room startRoom, int health) {
         this.currentRoom = startRoom;
@@ -15,6 +17,10 @@ public class Player {
 
     public Room getCurrenRoom() {
         return currentRoom;
+    }
+
+    public Weapon getCurrentWeapon() {
+        return currentWeapon;
     }
 
     public int getHealth() {
@@ -125,6 +131,14 @@ public class Player {
         return false;
     }
 
+    public Item showInventory1(String itemName) {
+        for (Item item : inventory) {
+            if (item.getItemName().equals(itemName)) ;
+            return item;
+        }
+        return null;
+    }
+
     public String showInventory() {
         String string = "";
         if (!inventory.isEmpty()) {
@@ -146,7 +160,7 @@ public class Player {
                     return ReturnMessage.EAT;
 
                 }
-                return ReturnMessage.CANTBEEATEN;
+                return ReturnMessage.CANT_BE_USED;
             }
         }
         for (Item item : currentRoom.getRoomItems()) {
@@ -157,14 +171,14 @@ public class Player {
                     return ReturnMessage.EAT;
 
                 }
-                return ReturnMessage.CANTBEEATEN;
+                return ReturnMessage.CANT_BE_USED;
             }
         }
-        return ReturnMessage.CANTBEFOUND;
+        return ReturnMessage.CANT_BE_FOUND;
 
     }
 
-    public void adjustHealth(int amount){
+    public void adjustHealth(int amount) {
         health += amount;
 
     }

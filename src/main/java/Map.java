@@ -15,8 +15,10 @@ public class Map {
         //Room 1
         room1.setEast(room2);
         room1.setSouth(room4);
-        room1.addItem("Lamp", "Shines bright like a diamond");
-        room1.addItem("Apple", "A fresh apple", 10);
+        room1.addItem(new Item("Lamp", "Shines bright like a diamond"));
+        room1.addItem(new Food("Apple", "A fresh apple", 10));
+        room1.addItem(new RangedWeapon("Gun", "Rusty old piece - might backfire", 2,2));
+        room1.addItem(new MeleeWeapon("The Sword of a THOUSAND TRUTHS", "MY GOD WHAT A SWORD", 5));
         //Room 2
         room2.setWest(room1);
         room2.setEast(room3);
@@ -28,10 +30,10 @@ public class Map {
         //Room 4
         room4.setNorth(room1);
         room4.setSouth(room7);
-        room4.addItem("Mithril armor", "armor made of magical resistance");
+        room4.addItem(new Item("Mithril armor", "armor made of magical resistance"));
         //Room5
         room5.setSouth(room8);
-        room5.addItem("Treasure", "Lots of gold coins");
+        room5.addItem(new Item("Treasure", "Lots of gold coins"));
         //Room 6
         room6.setNorth(room3);
         room6.setSouth(room9);
