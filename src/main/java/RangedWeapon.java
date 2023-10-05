@@ -1,3 +1,4 @@
+
 public class RangedWeapon extends Weapon {
 
     private int ammunition;
@@ -12,5 +13,9 @@ public class RangedWeapon extends Weapon {
         ammunition -=1;
         return getDmg();
 
+    }
+    @Override
+    public boolean isLoaded(){
+        return ammunition >0;
     }
 }

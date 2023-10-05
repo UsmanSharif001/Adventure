@@ -91,8 +91,6 @@ public class Player {
             return true;
         }
     }
-
-
     public String look() {
         Room curentRoom = getCurrenRoom();
         if (curentRoom != null) {
@@ -105,8 +103,6 @@ public class Player {
             return string;
         } else return "You are not in a room";
     }
-
-
     public boolean takeItem(String itemName) {
         for (Item item : getCurrenRoom().getRoomItems()) {
             if (item.getItemName().toLowerCase().contains(itemName.toLowerCase())) {
@@ -181,7 +177,6 @@ public class Player {
 
     }
 
-
     public ReturnMessage equip(String itemName) {
         Item equippedWeapon = showInventory1(itemName);
         if (equippedWeapon == null) {
@@ -190,7 +185,6 @@ public class Player {
 
         if (equippedWeapon instanceof Weapon) {
             currentWeapon = (Weapon) equippedWeapon;
-            //inventory.remove(equippedWeapon);
             return ReturnMessage.USE;
         }
 
@@ -211,5 +205,6 @@ public class Player {
     public void adjustHealth(int amount) {
         health += amount;
     }
+
 }
 
