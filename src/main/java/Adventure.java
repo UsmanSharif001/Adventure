@@ -36,5 +36,8 @@ public class Adventure {
         public ReturnMessage eat(String itemName){
                 return player.eat(itemName);
         }
+        public ReturnMessage equip(String itemName){
+                return player.equip(itemName);
+        }
 }
 

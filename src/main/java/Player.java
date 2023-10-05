@@ -157,8 +157,7 @@ public class Player {
                 if (item instanceof Food) {
                     inventory.remove(item);
                     adjustHealth(((Food) item).getHealth());
-                    return ReturnMessage.EAT;
-
+                    return ReturnMessage.USE;
                 }
                 return ReturnMessage.CANT_BE_USED;
             }
@@ -168,8 +167,7 @@ public class Player {
                 if (item instanceof Food) {
                     currentRoom.getRoomItems().remove(item);
                     adjustHealth(((Food) item).getHealth());
-                    return ReturnMessage.EAT;
-
+                    return ReturnMessage.USE;
                 }
                 return ReturnMessage.CANT_BE_USED;
             }
@@ -177,6 +175,24 @@ public class Player {
         return ReturnMessage.CANT_BE_FOUND;
 
     }
+
+
+    public ReturnMessage equip(String itemName) {
+        Item equippedWeapon = showInventory1(itemName);
+        for (Item item : inventory) {
+            if (equippedWeapon == null) {
+                return ReturnMessage.CANT_BE_USED;
+            }
+            if (item instanceof Weapon) {
+                currentWeapon = (Weapon) showInventory1(itemName);
+                inventory.remove(equippedWeapon);
+                return ReturnMessage.USE;
+            }
+        }
+
+        return ReturnMessage.CANT_BE_FOUND;
+    }
+
 
     public void adjustHealth(int amount) {
         health += amount;

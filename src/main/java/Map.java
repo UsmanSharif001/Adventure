@@ -22,11 +22,11 @@ public class Map {
         //Room 2
         room2.setWest(room1);
         room2.setEast(room3);
-        room2.addItem("Note", "A scribbled note");
+        room2.addItem(new Item("Note", "A scribbled note"));
         //Room 3
         room3.setWest(room2);
         room3.setSouth(room6);
-        room3.addItem("Ice cream", "my god this is awesome", 20);
+        room3.addItem(new Food("Ice cream", "my god this is awesome", 20));
         //Room 4
         room4.setNorth(room1);
         room4.setSouth(room7);
@@ -37,16 +37,16 @@ public class Map {
         //Room 6
         room6.setNorth(room3);
         room6.setSouth(room9);
-        room6.addItem("Mysterious ooze", "Alineating looking food", -25);
+        room6.addItem(new Food("Mysterious ooze", "Alineating looking food - take a chance", -25));
         //Room 7
         room7.setNorth(room4);
         room7.setEast(room8);
-        room7.addItem("Sword", "The sword of a thousand truths");
+        room7.addItem(new Item("Sword", "The sword of a thousand truths"));
         //Room 8
         room8.setWest(room7);
         room8.setNorth(room5);
         room8.setEast(room9);
-        room8.addItem("STONE SNAKES", "Snakes of stone");
+        room8.addItem(new Item("STONE SNAKES", "Snakes of stone"));
         //Room 9
         room9.setWest(room8);
         room9.setNorth(room6);
