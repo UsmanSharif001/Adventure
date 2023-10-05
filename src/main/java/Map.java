@@ -2,7 +2,7 @@ public class Map {
 
     private Room startroom;
 
-    public void buildMap() {
+    public void buildMap () {
         Room room1 = new Room("The bland room", "You enter a bland room. The old stone floor looks rigid and ready to break at any given moment.\n At the wall to the left you see a fainting picture of whom you assume to be the lord of this castle.\n She stands tall and proud almost as if she would expect nothing but failiure from her subjects... or you?");
         Room room2 = new Room("Total Darkness", "You're enshrouded by darkness in this room. Only a faint light is emitting from a extinguishing candle nearby. There's a note laying on the  old worned table");
         Room room3 = new Room("The poison room", "A flowery scent strikes you poisonous. You feel enfeebled by the smell and the longer you linger in the room the more dazy it gets.\nAs you wander about in the room you can sense a silhouette of something laying on the cold hardened floor. A corpse.\nThe same picture is found in this room but the only diffrence is this time the Lord is laughing... hysterically");
@@ -15,47 +15,46 @@ public class Map {
         //Room 1
         room1.setEast(room2);
         room1.setSouth(room4);
-        room1.addItem("Lamp", "Shines bright like a diamond");
-        room1.addItem("Apple", "A fresh apple", 10);
+        room1.addItem(new Item("Lamp", "Shines bright like a diamond"));
+        room1.addItem(new Food("Apple", "A fresh apple", 10));
+        room1.addItem(new RangedWeapon("Gun", "Rusty old piece - might backfire", 2,2));
+        room1.addItem(new MeleeWeapon("Sword", "The Sword of a THOUSAND TRUTHS", 5));
         //Room 2
         room2.setWest(room1);
         room2.setEast(room3);
-        room2.addItem("Note", "A scribbled note");
+        room2.addItem(new Item("Note", "A scribbled note"));
         //Room 3
         room3.setWest(room2);
         room3.setSouth(room6);
-        room3.addItem("Ice cream", "my god this is awesome", 20);
+        room3.addItem(new Food("Ice cream", "my god this is awesome", 20));
         //Room 4
         room4.setNorth(room1);
         room4.setSouth(room7);
-        room4.addItem("Mithril armor", "armor made of magical resistance");
+        room4.addItem(new Item("Mithril armor", "armor made of magical resistance"));
         //Room5
         room5.setSouth(room8);
-        room5.addItem("Treasure", "Lots of gold coins");
+        room5.addItem(new Item("Treasure", "Lots of gold coins"));
         //Room 6
         room6.setNorth(room3);
         room6.setSouth(room9);
-        room6.addItem("Mysterious ooze", "Alineating looking food", -25);
+        room6.addItem(new Food("Mysterious ooze", "Alineating looking food - take a chance", -25));
         //Room 7
         room7.setNorth(room4);
         room7.setEast(room8);
-        room7.addItem("Sword", "The sword of a thousand truths");
+        room7.addItem(new Item("Pen", "red ink pain"));
         //Room 8
         room8.setWest(room7);
         room8.setNorth(room5);
         room8.setEast(room9);
-        room8.addItem("STONE SNAKES", "Snakes of stone");
+        room8.addItem(new Item("STONE SNAKES", "Snakes of stone"));
         //Room 9
         room9.setWest(room8);
         room9.setNorth(room6);
 
         startroom = room1;
 
-    }
-
-    public Room getStartroom() {
+        }
+    public Room getStartroom(){
         return startroom;
     }
-
-
 }

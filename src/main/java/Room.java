@@ -17,16 +17,13 @@ public class Room {
         this.enviorment=enviorment;
     }
 
-    public void addItem(String itemName, String itemDescription, int health){
+    public void addItem(Item item){
         //Item item = new Item(itemName, itemDescription); Undgår her at bruge item navn.
-        itemList.add(new Food(itemName,itemDescription,health));
+        itemList.add(item);
 
     }
 
-    public void addItem(String itemName, String itemDescription){
-        //Item item = new Item(itemName, itemDescription); Undgår her at bruge item navn.
-        itemList.add(new Item(itemName, itemDescription));
-    }
+
 
     //set metoder
     public void setEast(Room east){

@@ -1,5 +1,5 @@
 public enum ReturnMessage {
-    EAT,
-    CANTBEFOUND,
-    CANTBEEATEN
+    USE,
+    CANT_BE_FOUND,
+    CANT_BE_USED
 }

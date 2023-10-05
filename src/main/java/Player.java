@@ -1,3 +1,4 @@
+import java.security.PublicKey;
 import java.util.ArrayList;
 
 public class Player {
@@ -5,6 +6,7 @@ public class Player {
     private Room currentRoom;
     private ArrayList<Item> inventory;
     private int health;
+    private Weapon currentWeapon;
 
     public Player(Room startRoom, int health) {
         this.currentRoom = startRoom;
@@ -15,6 +17,10 @@ public class Player {
 
     public Room getCurrenRoom() {
         return currentRoom;
+    }
+
+    public Weapon getCurrentWeapon() {
+        return currentWeapon;
     }
 
     public int getHealth() {
@@ -34,8 +40,8 @@ public class Player {
             requestRoom = currentRoom.getEast();
             succes = goEast();
         } else if (direction == 'w') {
-            succes = goWest();
             requestRoom = currentRoom.getWest();
+            succes = goWest();
         }
         if (succes && requestRoom != null) {
             currentRoom = requestRoom;
@@ -85,8 +91,6 @@ public class Player {
             return true;
         }
     }
-
-
     public String look() {
         Room curentRoom = getCurrenRoom();
         if (curentRoom != null) {
@@ -99,8 +103,6 @@ public class Player {
             return string;
         } else return "You are not in a room";
     }
-
-
     public boolean takeItem(String itemName) {
         for (Item item : getCurrenRoom().getRoomItems()) {
             if (item.getItemName().toLowerCase().contains(itemName.toLowerCase())) {
@@ -125,11 +127,24 @@ public class Player {
         return false;
     }
 
+    public Item showInventory1(String itemName) {
+        for (Item item : inventory) {
+            if (item.getItemName().toLowerCase().equals(itemName.toLowerCase())) {
+                return item;
+            }
+
+        }
+        return null;
+    }
+
     public String showInventory() {
         String string = "";
         if (!inventory.isEmpty()) {
             for (Item item : inventory) {
                 string += " \n" + item;
+            }
+            if (currentWeapon != null){
+                string += "\nYou have the following weapon equipped " + currentWeapon;
             }
         } else {
             string = "Inventory is empty";
@@ -143,10 +158,9 @@ public class Player {
                 if (item instanceof Food) {
                     inventory.remove(item);
                     adjustHealth(((Food) item).getHealth());
-                    return ReturnMessage.EAT;
-
+                    return ReturnMessage.USE;
                 }
-                return ReturnMessage.CANTBEEATEN;
+                return ReturnMessage.CANT_BE_USED;
             }
         }
         for (Item item : currentRoom.getRoomItems()) {
@@ -154,19 +168,43 @@ public class Player {
                 if (item instanceof Food) {
                     currentRoom.getRoomItems().remove(item);
                     adjustHealth(((Food) item).getHealth());
-                    return ReturnMessage.EAT;
-
+                    return ReturnMessage.USE;
                 }
-                return ReturnMessage.CANTBEEATEN;
+                return ReturnMessage.CANT_BE_USED;
             }
         }
-        return ReturnMessage.CANTBEFOUND;
+        return ReturnMessage.CANT_BE_FOUND;
 
+    }
+
+    public ReturnMessage equip(String itemName) {
+        Item equippedWeapon = showInventory1(itemName);
+        if (equippedWeapon == null) {
+            return ReturnMessage.CANT_BE_FOUND;
+        }
+
+        if (equippedWeapon instanceof Weapon) {
+            currentWeapon = (Weapon) equippedWeapon;
+            return ReturnMessage.USE;
+        }
+
+        return ReturnMessage.CANT_BE_USED;
+    }
+
+    public ReturnMessageAttack attack(){
+        if (currentWeapon == null){
+            return ReturnMessageAttack.NO_WEAPON_EQUIPPED;
+        }
+        if (!currentWeapon.isLoaded()){
+            return ReturnMessageAttack.OUT_OF_AMMO;
+        }
+        currentWeapon.attack();
+        return ReturnMessageAttack.ATTACK;
     }
 
     public void adjustHealth(int amount) {
         health += amount;
-
     }
+
 }
 
