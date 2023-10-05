@@ -34,8 +34,8 @@ public class Player {
             requestRoom = currentRoom.getEast();
             succes = goEast();
         } else if (direction == 'w') {
-            requestRoom = currentRoom.getWest();
             succes = goWest();
+            requestRoom = currentRoom.getWest();
         }
         if (succes && requestRoom != null) {
             currentRoom = requestRoom;
@@ -164,7 +164,7 @@ public class Player {
 
     }
 
-    public void adjustHealth(int amount){
+    public void adjustHealth(int amount) {
         health += amount;
 
     }
