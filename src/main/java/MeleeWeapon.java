@@ -4,7 +4,6 @@ public class MeleeWeapon extends Weapon{
         super(itemName,itemDescription,dmg);
 
     }
-
     public int remainingAmmo(int usedAmmunition){
         return 0;
     }

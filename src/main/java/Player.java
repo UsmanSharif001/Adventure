@@ -197,7 +197,6 @@ public class Player {
 
     public void adjustHealth(int amount) {
         health += amount;
-
     }
 }
 

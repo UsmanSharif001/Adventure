@@ -41,7 +41,7 @@ public class Map {
         //Room 7
         room7.setNorth(room4);
         room7.setEast(room8);
-        room7.addItem(new Item("Sword", "The sword of a thousand truths"));
+        room7.addItem(new Item("Pen", "red ink pain"));
         //Room 8
         room8.setWest(room7);
         room8.setNorth(room5);
@@ -54,10 +54,7 @@ public class Map {
         startroom = room1;
 
         }
-
     public Room getStartroom(){
         return startroom;
     }
-
-
 }
