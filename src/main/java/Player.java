@@ -46,10 +46,9 @@ public class Player {
         if (succes && requestRoom != null) {
             currentRoom = requestRoom;
             return true;
-        } else {
-            currentRoom = requestRoom;
-            return false;
         }
+        return false;
+
     }
 
     public boolean goNorth() {
@@ -91,6 +90,7 @@ public class Player {
             return true;
         }
     }
+
     public String look() {
         Room curentRoom = getCurrenRoom();
         if (curentRoom != null) {
@@ -103,6 +103,7 @@ public class Player {
             return string;
         } else return "You are not in a room";
     }
+
     public boolean takeItem(String itemName) {
         for (Item item : getCurrenRoom().getRoomItems()) {
             if (item.getItemName().toLowerCase().contains(itemName.toLowerCase())) {
@@ -143,7 +144,7 @@ public class Player {
             for (Item item : inventory) {
                 string += " \n" + item;
             }
-            if (currentWeapon != null){
+            if (currentWeapon != null) {
                 string += "\nYou have the following weapon equipped " + currentWeapon;
             }
         } else {
@@ -191,11 +192,11 @@ public class Player {
         return ReturnMessage.CANT_BE_USED;
     }
 
-    public ReturnMessageAttack attack(){
-        if (currentWeapon == null){
+    public ReturnMessageAttack attack() {
+        if (currentWeapon == null) {
             return ReturnMessageAttack.NO_WEAPON_EQUIPPED;
         }
-        if (!currentWeapon.isLoaded()){
+        if (!currentWeapon.isLoaded()) {
             return ReturnMessageAttack.OUT_OF_AMMO;
         }
         currentWeapon.attack();
