@@ -19,9 +19,6 @@ public String getItemDescription(){
 
     @Override
     public String toString() {
-        return "Item{" +
-                "itemName='" + itemName + '\'' +
-                ", itemDescribion='" + itemDescription + '\'' +
-                '}';
+        return itemName+ ":"  + " \"" + itemDescription + "\"";
     }
 }

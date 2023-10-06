@@ -11,8 +11,6 @@ public abstract class Weapon extends Item {
         return dmg;
     }
 
-
-
     public abstract int attack();
     public abstract boolean isLoaded();
 }
