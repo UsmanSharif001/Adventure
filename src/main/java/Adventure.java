@@ -13,7 +13,7 @@ public class Adventure {
                 return player.look();
         }
 
-        public boolean moveRoom(String move){
+        public boolean moveRoom(char move){
              return player.moveRoom(move);
         }
 

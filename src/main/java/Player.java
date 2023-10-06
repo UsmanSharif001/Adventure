@@ -27,19 +27,19 @@ public class Player {
         return health;
     }
 
-    public boolean moveRoom(String direction) {
+    public boolean moveRoom(char direction) {
         Room requestRoom = null;
         boolean succes = false;
-        if (direction == "north") {
+        if (direction == 'n') {
             requestRoom = currentRoom.getNorth();
             succes = goNorth();
-        } else if (direction == "south") {
+        } else if (direction == 's') {
             requestRoom = currentRoom.getSouth();
             succes = goSouth();
-        } else if (direction == "east") {
+        } else if (direction == 'e') {
             requestRoom = currentRoom.getEast();
             succes = goEast();
-        } else if (direction == "west") {
+        } else if (direction == 'w') {
             requestRoom = currentRoom.getWest();
             succes = goWest();
         }
