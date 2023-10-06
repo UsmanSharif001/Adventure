@@ -27,19 +27,19 @@ public class Player {
         return health;
     }
 
-    public boolean moveRoom(char direction) {
+    public boolean moveRoom(String direction) {
         Room requestRoom = null;
         boolean succes = false;
-        if (direction == 'n') {
+        if (direction == "north") {
             requestRoom = currentRoom.getNorth();
             succes = goNorth();
-        } else if (direction == 's') {
+        } else if (direction == "south") {
             requestRoom = currentRoom.getSouth();
             succes = goSouth();
-        } else if (direction == 'e') {
+        } else if (direction == "east") {
             requestRoom = currentRoom.getEast();
             succes = goEast();
-        } else if (direction == 'w') {
+        } else if (direction == "west") {
             requestRoom = currentRoom.getWest();
             succes = goWest();
         }
@@ -50,7 +50,6 @@ public class Player {
         return false;
 
     }
-
     public boolean goNorth() {
         Room roomNorth = currentRoom.getNorth();
         if (roomNorth == null) {
@@ -111,7 +110,6 @@ public class Player {
                 getCurrenRoom().getRoomItems().remove(item);
                 return true;
             }
-
         }
         return false;
     }
@@ -123,7 +121,6 @@ public class Player {
                 getCurrenRoom().getRoomItems().add(item);
                 return true;
             }
-
         }
         return false;
     }
@@ -133,7 +130,6 @@ public class Player {
             if (item.getItemName().toLowerCase().equals(itemName.toLowerCase())) {
                 return item;
             }
-
         }
         return null;
     }
