@@ -50,7 +50,6 @@ public class Player {
         return false;
 
     }
-
     public boolean goNorth() {
         Room roomNorth = currentRoom.getNorth();
         if (roomNorth == null) {
@@ -111,7 +110,6 @@ public class Player {
                 getCurrenRoom().getRoomItems().remove(item);
                 return true;
             }
-
         }
         return false;
     }
@@ -123,7 +121,6 @@ public class Player {
                 getCurrenRoom().getRoomItems().add(item);
                 return true;
             }
-
         }
         return false;
     }
@@ -133,7 +130,6 @@ public class Player {
             if (item.getItemName().toLowerCase().equals(itemName.toLowerCase())) {
                 return item;
             }
-
         }
         return null;
     }
