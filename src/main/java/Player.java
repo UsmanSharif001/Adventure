@@ -100,6 +100,11 @@ public class Player {
                     string += "\nThere is a " + item.getItemName() + " that " + item.getItemDescription();
                 }
             }
+            if (!curentRoom.getEnemyList().isEmpty()){
+                for (Enemy enemy :  currentRoom.getEnemyList()){
+                    string += "\nThere is a " + enemy.getName() +" " + enemy.getNameDescription();
+                }
+            }
             return string;
         } else return "You are not in a room";
     }

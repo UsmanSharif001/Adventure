@@ -10,6 +10,7 @@ public class Room {
     private Room north;
     private Room south;
     private ArrayList<Item> itemList =new ArrayList<>();
+    private ArrayList<Enemy> enemyList = new ArrayList<>();
 
 
     public Room(String name,String enviorment){
@@ -69,5 +70,9 @@ public class Room {
 
     public ArrayList<Item> getRoomItems(){
         return itemList;
+    }
+
+    public ArrayList<Enemy> getEnemyList(){
+        return enemyList;
     }
 }
