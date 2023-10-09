@@ -7,6 +7,7 @@ public class Player {
     private ArrayList<Item> inventory;
     private int health;
     private Weapon currentWeapon;
+    private Enemy enemy;
 
     public Player(Room startRoom, int health) {
         this.currentRoom = startRoom;

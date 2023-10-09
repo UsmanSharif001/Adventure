@@ -9,8 +9,8 @@ public class RangedWeapon extends Weapon {
     }
 
     @Override
-    public int attack(){
-        ammunition -=1;
+    public int attack() {
+        ammunition -= 1;
         return getDmg();
 
     }

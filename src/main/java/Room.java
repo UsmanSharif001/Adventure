@@ -23,7 +23,9 @@ public class Room {
 
     }
 
-
+    public void addEnemy(Enemy enemy){
+        enemyList.add(enemy);
+    }
 
     //set metoder
     public void setEast(Room east){

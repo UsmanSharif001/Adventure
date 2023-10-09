@@ -2,7 +2,6 @@ public abstract class Weapon extends Item {
 
     private int dmg;
 
-
     public Weapon(String itemName, String itemDescription, int dmg){
         super(itemName,itemDescription);
         this.dmg= dmg;
@@ -12,5 +11,7 @@ public abstract class Weapon extends Item {
     }
 
     public abstract int attack();
+
     public abstract boolean isLoaded();
+    //public abstract
 }
