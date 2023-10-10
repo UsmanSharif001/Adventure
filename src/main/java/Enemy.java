@@ -32,7 +32,17 @@ public class Enemy {
 
     }
 
-    public void adjustHealth(int amount) {
+    public void attackPlayer(Player player){
+        weapon.useWeapon();
+        player.hit(weapon);
+    }
+
+    public void hit(Weapon weapon){
+        health -= weapon.getDmg();
+
+    }
+
+    public void adjustHealthFood(int amount) {
         health += amount;
     }
 

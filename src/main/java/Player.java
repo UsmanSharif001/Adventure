@@ -1,4 +1,3 @@
-import java.security.PublicKey;
 import java.util.ArrayList;
 
 public class Player {
@@ -194,15 +193,21 @@ public class Player {
         return ReturnMessage.CANT_BE_USED;
     }
 
-    public ReturnMessageAttack attack() {
+    public ReturnMessageAttack attack(Enemy enemy) {
         if (currentWeapon == null) {
             return ReturnMessageAttack.NO_WEAPON_EQUIPPED;
         }
         if (!currentWeapon.isLoaded()) {
             return ReturnMessageAttack.OUT_OF_AMMO;
         }
-        currentWeapon.attack();
+        currentWeapon.useWeapon();
+        enemy.hit(currentWeapon);
+        enemy.attackPlayer(this);
         return ReturnMessageAttack.ATTACK;
+    }
+
+    public void hit(Weapon weapon){
+        health -= weapon.getDmg();
     }
 
     public void adjustHealth(int amount) {

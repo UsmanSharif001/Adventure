@@ -3,12 +3,20 @@ public class Adventure {
         private Map map;
         private Player player;
 
+
         public Adventure(){
                 map = new Map();
                 map.buildMap();
                player = new Player(map.getStartroom(),50);
         }
 
+        public Player getPlayer(){
+                return player;
+        }
+
+        public Room getPlayerLocation(){
+                return player.getCurrenRoom();
+        }
         public String look(){
                 return player.look();
         }
@@ -40,8 +48,17 @@ public class Adventure {
                 return player.equip(itemName);
         }
 
-        public ReturnMessageAttack attack(){
-                return player.attack();
+        public ReturnMessageAttack attack(Enemy enemy){
+                return player.attack(enemy);
+        }
+
+        public boolean isEnemyAlive(Enemy enemy){
+                if (enemy.getHealth() > 0){
+                        return true;
+                }
+                getPlayerLocation().addItem(enemy.getWeapon());
+                getPlayerLocation().getEnemyList().remove(enemy);
+          return false;
         }
 }
 

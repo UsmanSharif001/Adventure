@@ -5,7 +5,7 @@ public class MeleeWeapon extends Weapon{
     }
 
     @Override
-    public int attack() {
+    public int useWeapon() {
         return getDmg();
     }
     @Override
