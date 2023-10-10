@@ -1,5 +1,3 @@
-import java.util.ArrayList;
-
 public class Enemy {
     private String name;
     private String nameDescription;
@@ -45,24 +43,5 @@ public class Enemy {
     public void adjustHealthFood(int amount) {
         health += amount;
     }
-
-
-
-
-//    public boolean isEnemyDead(){
-//       // if ()
-//    //}
-
-
-//    public boolean dropWeaponIfDead(String itemName) {
-//        Item weapon = currentWeapon;
-//        {
-//            if (weapon.getItemName().toLowerCase().contains(itemName.toLowerCase())) {
-//
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
 
 }
