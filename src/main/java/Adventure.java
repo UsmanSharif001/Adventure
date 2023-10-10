@@ -60,5 +60,14 @@ public class Adventure {
                 getPlayerLocation().getEnemyList().remove(enemy);
           return false;
         }
+        public boolean isPlayerAlive(Player player) {
+                if (player.getHealth() > 0) {
+                        return true;
+                }
+                return false;
+
+        }
+
 }
+
 
