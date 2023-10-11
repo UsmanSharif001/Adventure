@@ -2,7 +2,7 @@ public class Map {
 
     private Room startroom;
 
-    public void buildMap() {
+    public void buildMap () {
         Room room1 = new Room("The dusty room", "The old door creaks open. As you continue to open the door the rusty hinges fall off and the door slams to the ground.\nIf there were anyone else in this god forsakened castle they would surely have heard you.\nThis room has old furbished furniture and set aside neatly to one side the other side there has been evidence of a slaughter.\nWorn out blood testaments to the cruel happenings in this castle");
         Room room2 = new Room("Total Darkness", "You're enshrouded by darkness in this room. Only a faint light is emitting from an extinguishing candle nearby. There's a note laying on the  old worned table");
         Room room3 = new Room("The poison room", "A flowery scent strikes you poisonous. You feel enfeebled by the smell and the longer you linger in the room the more dazy it gets.\nAs you wander about in the room you can sense a silhouette of something laying on the cold hardened floor. A corpse.\nA picture is found of the what you assume the lord of this castle is. She is laughing... hysterically");
@@ -17,10 +17,10 @@ public class Map {
         room1.setSouth(room4);
         room1.addItem(new Item("Lamp", ""));
         room1.addItem(new Food("Apple", "A fresh apple", 10));
-        room1.addItem(new RangedWeapon("Gun", "Rusty old piece - might backfire", 2, 2));
+        room1.addItem(new RangedWeapon("Gun", "Rusty old piece - might backfire", 2,2));
         room1.addItem(new MeleeWeapon("Sword", "The Sword of a THOUSAND TRUTHS", 5));
         //Våbenobjekt oprettes i enemy's konstruktørkald.
-        room1.addEnemy(new Enemy("Troll", "Stinking big troll", 20, new MeleeWeapon("Mace", "Rusty mace", 20)));
+        room1.addEnemy(new Enemy("Troll", "Stinking big troll",20,new MeleeWeapon("Mace", "Rusty mace",5)));
         //Set metode til våben
 //        MeleeWeapon w1=new MeleeWeapon("Sword", "r",30);
 //        Enemy e1 = new Enemy("Troll", "Stinking", 20,null);
@@ -43,7 +43,7 @@ public class Map {
         room4.addItem(new Item("Mithril armor", "armor made of magical resistance"));
         //Room5
         room5.setSouth(room8);
-        room5.addItem(new RangedWeapon("Crusaders Longbow", "Light shines on this bow", 8, 10));
+        room5.addItem(new RangedWeapon("Crusaders Longbow","Light shines on this bow", 8,10));
         //Room 6
         room6.setNorth(room3);
         room6.setSouth(room9);
@@ -55,17 +55,16 @@ public class Map {
         room8.setWest(room7);
         room8.setNorth(room5);
         room8.setEast(room9);
-        room8.addItem(new Item("Water bucket", "A icey spike drips water into a filled bucket - the water seems clean."));
-        room8.addItem(new Item("Water", "Drinkable fresh mountainwater - also eatable with the thick freshness. Reminds you of ice."));
+        room8.addItem(new Item("Water bucket","A icey spike drips water into a filled bucket - the water seems clean."));
+        room8.addItem(new Item("Water","Drinkable fresh mountainwater - also eatable with the thick freshness. Reminds you of ice."));
         //Room 9
         room9.setWest(room8);
         room9.setNorth(room6);
 
         startroom = room1;
 
-    }
-
-    public Room getStartroom() {
+        }
+    public Room getStartroom(){
         return startroom;
     }
 }

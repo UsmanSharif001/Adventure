@@ -1,4 +1,3 @@
-import java.security.PublicKey;
 import java.util.ArrayList;
 
 public class Player {
@@ -51,7 +50,6 @@ public class Player {
         return false;
 
     }
-
     public boolean goNorth() {
         Room roomNorth = currentRoom.getNorth();
         if (roomNorth == null) {
@@ -101,9 +99,9 @@ public class Player {
                     string += "\nThere is a " + item.getItemName() + " that " + item.getItemDescription();
                 }
             }
-            if (!curentRoom.getEnemyList().isEmpty()) {
-                for (Enemy enemy : currentRoom.getEnemyList()) {
-                    string += "\nThere is a " + enemy.getName() + " " + enemy.getNameDescription();
+            if (!curentRoom.getEnemyList().isEmpty()){
+                for (Enemy enemy :  currentRoom.getEnemyList()){
+                    string += "\nThere is a " + enemy.getName() +" " + enemy.getNameDescription();
                 }
             }
             return string;
@@ -195,18 +193,22 @@ public class Player {
         return ReturnMessage.CANT_BE_USED;
     }
 
-    public ReturnMessageAttack attack() {
+    public ReturnMessageAttack attack(Enemy enemy) {
         if (currentWeapon == null) {
             return ReturnMessageAttack.NO_WEAPON_EQUIPPED;
         }
         if (!currentWeapon.isLoaded()) {
             return ReturnMessageAttack.OUT_OF_AMMO;
         }
-        currentWeapon.attack();
+        currentWeapon.useWeapon();
+        enemy.hit(currentWeapon);
+        enemy.attackPlayer(this);
         return ReturnMessageAttack.ATTACK;
-
     }
 
+    public void hit(Weapon weapon){
+        health -= weapon.getDmg();
+    }
 
     public void adjustHealth(int amount) {
         health += amount;
