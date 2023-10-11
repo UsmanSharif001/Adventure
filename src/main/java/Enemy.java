@@ -7,37 +7,38 @@ public class Enemy {
     private Weapon weapon;
 
 
-
-    public Enemy (String name, String nameDescription, int health, Weapon weapon){
-        this.name=name;
-        this.nameDescription=nameDescription;
-        this.health=health;
-        this.weapon=weapon;
+    public Enemy(String name, String nameDescription, int health, Weapon weapon) {
+        this.name = name;
+        this.nameDescription = nameDescription;
+        this.health = health;
+        this.weapon = weapon;
 
     }
-    public String getName(){
+
+    public String getName() {
         return name;
     }
-    public String getNameDescription(){
+
+    public String getNameDescription() {
         return nameDescription;
     }
-    public int getHealth(){
+
+    public int getHealth() {
         return health;
     }
-    public Weapon getWeapon(){
+
+    public Weapon getWeapon() {
         return weapon;
     }
-    public void setCurrentWeapon(Weapon weapon){
-        this.weapon= weapon;
+
+    public void setCurrentWeapon(Weapon weapon) {
+        this.weapon = weapon;
 
     }
 
     public void adjustHealth(int amount) {
         health += amount;
     }
-
-
-
 
 //    public boolean isEnemyDead(){
 //       // if ()
