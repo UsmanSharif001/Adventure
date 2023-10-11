@@ -16,11 +16,11 @@ public class Map {
         room1.setEast(room2);
         room1.setSouth(room4);
         room1.addItem(new Item("Lamp", ""));
-        room1.addItem(new Food("Apple", "A fresh apple", 10));
+        room1.addItem(new Food("Apple", "A fresh apple", -100));
         room1.addItem(new RangedWeapon("Gun", "Rusty old piece - might backfire", 2,2));
         room1.addItem(new MeleeWeapon("Sword", "The Sword of a THOUSAND TRUTHS", 5));
         //Våbenobjekt oprettes i enemy's konstruktørkald.
-        room1.addEnemy(new Enemy("Troll", "Stinking big troll",20,new MeleeWeapon("Mace", "Rusty mace",5)));
+        room1.addEnemy(new Enemy("Troll", "Stinking big troll",20,new MeleeWeapon("Mace", "Rusty mace",100)));
         //Set metode til våben
 //        MeleeWeapon w1=new MeleeWeapon("Sword", "r",30);
 //        Enemy e1 = new Enemy("Troll", "Stinking", 20,null);
