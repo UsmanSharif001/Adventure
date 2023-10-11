@@ -11,7 +11,7 @@ public class Map {
         Room room6 = new Room("The entertainment room", "Escaping the poisonus room gasping for air and the feeling of drowsiness you enter a dressing room with all kind of costumes. They look extravagant  ");
         Room room7 = new Room("Trap room", "Entering this room you step onto a platform which activates the walls and lifts the floor towards cold metal spikes.\nThe talisman emits a blue light towards ");
         Room room8 = new Room("Infinit bucket", "The spike looks like the top of a mountain which pierced the castle falling down from the top.\nIn the room there's a bucket which is filled to the brim but it never seems to spill over");
-        Room room9 = new Room("room 9", "9");
+        Room room9 = new Room("The Chess room","You enter a huge room, you are standing on top of a staircase, you can see chandeleirs hanging from the roof.\n When you look down at the main floor in front of you, it looks like a big chess game. \n The floor is in black and white squares, and 3 meter high chess pieces are standing there. \n you hear a noice, and can see how the king from the white pieces turns, and stares at you. ");
         //Room 1
         room1.setEast(room2);
         room1.setSouth(room4);
@@ -60,6 +60,7 @@ public class Map {
         //Room 9
         room9.setWest(room8);
         room9.setNorth(room6);
+        room9.addEnemy(new Enemy("The King", "A majestic 3 meter high king made of granite, he has a sword in his hand and his eyes glow red", 50, new MeleeWeapon("Sword", "The mighty sword! might this actually be excalibur", 15)));
 
         startroom = room1;
 
