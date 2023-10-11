@@ -29,10 +29,6 @@ public class Enemy {
         return weapon;
     }
 
-    public void setCurrentWeapon(Weapon weapon) {
-        this.weapon = weapon;
-
-    }
 
     public void attackPlayer(Player player) {
         weapon.useWeapon();
@@ -44,8 +40,5 @@ public class Enemy {
 
     }
 
-    public void adjustHealthFood(int amount) {
-        health += amount;
-    }
 
 }

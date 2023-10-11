@@ -14,5 +14,5 @@ public abstract class Weapon extends Item {
     public abstract int useWeapon();
 
     public abstract boolean isLoaded();
-    //public abstract
+
 }
