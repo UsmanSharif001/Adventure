@@ -61,11 +61,11 @@ public class Adventure {
           return false;
         }
         public boolean isPlayerAlive(Player player) {
-                if (player.getHealth() > 0) {
+                if(player.getHealth()>0)  { //Player assumed to be alive
                         return true;
+                } else {
+                        return false; //Player gone
                 }
-                return false;
-
         }
 
 }

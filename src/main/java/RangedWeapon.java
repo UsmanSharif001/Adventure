@@ -3,9 +3,9 @@ public class RangedWeapon extends Weapon {
 
     private int ammunition;
 
-    public RangedWeapon (String itemName, String itemDescribtion, int dmg, int ammunition){
+    public RangedWeapon(String itemName, String itemDescribtion, int dmg, int ammunition) {
         super(itemName, itemDescribtion, dmg);
-        this.ammunition=ammunition;
+        this.ammunition = ammunition;
     }
 
     @Override
@@ -14,8 +14,9 @@ public class RangedWeapon extends Weapon {
         return getDmg();
 
     }
+
     @Override
-    public boolean isLoaded(){
-        return ammunition >0;
+    public boolean isLoaded() {
+        return ammunition > 0;
     }
 }
