@@ -1,72 +1,75 @@
 public class Adventure {
 
-        private Map map;
-        private Player player;
+    private Map map;
+    private Player player;
 
 
-        public Adventure(){
-                map = new Map();
-                map.buildMap();
-               player = new Player(map.getStartroom(),50);
-        }
+    public Adventure() {
+        map = new Map();
+        map.buildMap();
+        player = new Player(map.getStartroom(), 50);
+    }
 
-        public Player getPlayer(){
-                return player;
-        }
+    public Player getPlayer() {
+        return player;
+    }
 
-        public Room getPlayerLocation(){
-                return player.getCurrenRoom();
-        }
-        public String look(){
-                return player.look();
-        }
+    public Room getPlayerLocation() {
+        return player.getCurrenRoom();
+    }
 
-        public boolean moveRoom(char move){
-             return player.moveRoom(move);
-        }
+    public String look() {
+        return player.look();
+    }
 
-        public boolean takeItem (String itemName){
-                return player.takeItem(itemName);
-        }
+    public boolean moveRoom(char move) {
+        return player.moveRoom(move);
+    }
 
-        public boolean dropItem (String itemName){
-                return player.dropItem(itemName);
-        }
+    public boolean takeItem(String itemName) {
+        return player.takeItem(itemName);
+    }
 
-        public String showInventory(){
-                return player.showInventory();
-        }
+    public boolean dropItem(String itemName) {
+        return player.dropItem(itemName);
+    }
 
-        public int showHealth(){
-                return player.getHealth();
-        }
+    public String showInventory() {
+        return player.showInventory();
+    }
 
-        public ReturnMessage eat(String itemName){
-                return player.eat(itemName);
-        }
-        public ReturnMessage equip(String itemName){
-                return player.equip(itemName);
-        }
+    public int showHealth() {
+        return player.getHealth();
+    }
 
-        public ReturnMessageAttack attack(Enemy enemy){
-                return player.attack(enemy);
-        }
+    public ReturnMessage eat(String itemName) {
+        return player.eat(itemName);
+    }
 
-        public boolean isEnemyAlive(Enemy enemy){
-                if (enemy.getHealth() > 0){
-                        return true;
-                }
-                getPlayerLocation().addItem(enemy.getWeapon());
-                getPlayerLocation().getEnemyList().remove(enemy);
-          return false;
+    public ReturnMessage equip(String itemName) {
+        return player.equip(itemName);
+    }
+
+    public ReturnMessageAttack attack(Enemy enemy) {
+        return player.attack(enemy);
+    }
+
+    public boolean isEnemyAlive(Enemy enemy) {
+        if (enemy.getHealth() > 0) {
+            return true;
         }
-        public boolean isPlayerAlive(Player player) {
-                if(player.getHealth()>0)  { //Player assumed to be alive
-                        return true;
-                } else {
-                        return false; //Player gone
-                }
+        getPlayerLocation().addItem(enemy.getWeapon());
+        getPlayerLocation().getEnemyList().remove(enemy);
+        return false;
+    }
+
+    public boolean isPlayerAlive(Player player) {
+        if (player.getHealth() > 0) {
+            return true;
+        } else {
+            return false;
         }
+    }
 
 }
 

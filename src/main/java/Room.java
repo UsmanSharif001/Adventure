@@ -19,7 +19,6 @@ public class Room {
     }
 
     public void addItem(Item item) {
-        //Item item = new Item(itemName, itemDescription); Undgår her at bruge item navn.
         itemList.add(item);
 
     }

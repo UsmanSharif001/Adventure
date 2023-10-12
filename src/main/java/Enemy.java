@@ -29,7 +29,6 @@ public class Enemy {
         return weapon;
     }
 
-
     public void attackPlayer(Player player) {
         weapon.useWeapon();
         player.hit(weapon);
