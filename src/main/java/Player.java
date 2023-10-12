@@ -97,7 +97,7 @@ public class Player {
             String string = currentRoom.getName() + "\n" + currentRoom.getEnviorment();
             if (!curentRoom.getRoomItems().isEmpty()) {
                 for (Item item : currentRoom.getRoomItems()) {
-                    string += "\nThere is a " + item.getItemName() + " that " + item.getItemDescription();
+                    string += "\nItem: " + item.getItemName() + " " + item.getItemDescription();
                 }
             }
             if (!curentRoom.getEnemyList().isEmpty()) {

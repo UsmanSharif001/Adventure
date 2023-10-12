@@ -5,7 +5,7 @@ public class Map {
     public void buildMap() {
         Room room1 = new Room("The dusty room", "The old door creaks open. As you continue to open the door the rusty hinges fall off and the door slams to the ground.\nIf there were anyone else in this god forsakened castle they would surely have heard you.\nThis room has old furbished furniture and set aside neatly to one side the other side there has been evidence of a slaughter.\nWorn out blood testaments to the cruel happenings in this castle");
         Room room2 = new Room("Total Darkness", "You're enshrouded by darkness in this room. Only a faint light is emitting from an extinguishing candle nearby. There's a note laying on the  old worned table");
-        Room room3 = new Room("The poison room", "A flowery scent strikes you poisonous. You feel enfeebled by the smell and the longer you linger in the room the more dazy it gets.\nAs you wander about in the room you can sense a silhouette of something laying on the cold hardened floor. A corpse.\nA picture is found of the what you assume the lord of this castle is. She is laughing... hysterically");
+        Room room3 = new Room("The poison room", "A flowery scent strikes you poisonous. You feel enfeebled by the smell and the longer you linger in the room the more dazy it gets.\nAs you wander about in the room you can sense a silhouette of something laying on the cold hardened floor. A corpse.\nA picture is found of the what you assume the lord of this castle is. He is laughing... hysterically");
         Room room4 = new Room("Dragon room", "In the middle of this room a bronze statue of a grand dragon which emits power and a cunning wisdom stands before you.\nYou're amazed by the creation of this structure - it seems almost as if this thing belongs in the future.\nWalking around the statue you can see the statue is placed on a rail with a lever beside it");
         Room room5 = new Room("The bland room", "You enter a bland room. The old stone floor looks rigid and ready to break at any given moment.\n At the wall to the left of you, you see a fainting picture of whom you assume to be the lord of this castle.\n She stands tall and proud almost as if she would expect nothing but failiure from her subjects... or you?\nA bow lies underneath the picture sparkling light It calls to you.");
         Room room6 = new Room("The entertainment room", "Escaping the poisonus room gasping for air and the feeling of drowsiness you enter a dressing room with all kind of costumes. They look extravagant.\n Hidden amongst the costumes your sight almost escapes what you thought was a prop. A bow. Beside it some ooze lays.");
@@ -16,17 +16,10 @@ public class Map {
         //Room 1
         room1.setEast(room2);
         room1.setSouth(room4);
-        room1.addItem(new Item("Lamp", ""));
-        room1.addItem(new Food("Apple", "A fresh apple", -100));
-        room1.addItem(new RangedWeapon("Gun", "Rusty old piece - might backfire", 1,1));
-        room1.addItem(new MeleeWeapon("Sword", "The Sword of a THOUSAND TRUTHS", 200));
-        //Våbenobjekt oprettes i enemy's konstruktørkald.
-        room1.addEnemy(new Enemy("Troll", "Stinking big troll",20,new MeleeWeapon("Mace", "Rusty mace",2)));
-        //Set metode til våben
-//        MeleeWeapon w1=new MeleeWeapon("Sword", "r",30);
-//        Enemy e1 = new Enemy("Troll", "Stinking", 20,null);
-//        e1.setCurrentWeapon(w1);
-//        room1.addEnemy(e1);
+        room1.addItem(new Item("Lamp", "Shines bright like a diamond... Sometimes"));
+        room1.addItem(new Food("Apple", "A fresh apple", 10));
+        room1.addItem(new RangedWeapon("Gun", "Rusty old piece - might backfire", 2, 2));
+
         //Room 2
         room2.setWest(room1);
         room2.setEast(room3);
@@ -36,13 +29,16 @@ public class Map {
         //Room 3
         room3.setWest(room2);
         room3.setSouth(room6);
+        room3.addItem(new Food("Mushroom", "do you dare eat me?", 15));
+        room3.addEnemy(new Enemy("Lasher", "Long thorns are sticking out of its roots, when its slow walking towards you", 9, new MeleeWeapon("Thorn:", "Long and pointy might be good to shank enemies with", 6)));
+
         //Room 4
         room4.setNorth(room1);
         room4.setSouth(room7);
-        room4.addItem(new Item("Lever", "Lever - can maybe be pushed or pulled?"));
+        room4.addItem(new MeleeWeapon("Sword", "THE sword of a THOUSAND TRUTHS", 16));
         room4.addItem(new Item("A dragoncrest talisman", "Talisman of Deathwing is descriped on the back-side.\nWearing this necklace makes you see the energy flow in the room giving you the skill to always go the right way when in dire need") {
         });
-        room4.addItem(new Item("Mithril armor", "armor made of magical resistance"));
+        room4.addEnemy(new Enemy("Baby Dragon", "The small creature with black eyes, is it old enough to breath fire yet? who knows!", 10, new MeleeWeapon("Claw", "sharp but fairly short", 5)));
         //Room5
         room5.setSouth(room8);
         room5.addItem(new Item("Treasure", " Gold lots of gold!, diamonds everywhere!, you hear a distant sound... \"my precious..\" "));
@@ -76,3 +72,9 @@ public class Map {
         return startroom;
     }
 }
+//Våbenobjekt oprettes i enemy's konstruktørkald. Bliver ikke brugt.
+//Set metode til våben
+//        MeleeWeapon w1=new MeleeWeapon("Sword", "r",30);
+//        Enemy e1 = new Enemy("Troll", "Stinking", 20,null);
+//        e1.setCurrentWeapon(w1);
+//        room1.addEnemy(e1);
